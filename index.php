@@ -43,6 +43,29 @@ else{
 $sms = new SMS('Poste', 'Luca', 'pin', 'questo è il tuo pin:****', true, false,);
 var_dump($sms);
 
+echo "Mittente: ".$sms->getMittente()."<br/>";
+echo "Destinatario: ".$sms->getDestinatario()."<br/>";
+echo "Oggetto: ".$sms->getOggetto()."<br/>";
+echo "Contenuto: ".$sms->getContenuto()."<br/>";
+echo "Notifica: ".$sms->getNotificaLettura();
+if($sms->getNotificaLettura()){
+    echo "messaggio letto";
+}
+else{
+    echo "messaggio non letto";
+}
+echo "<br/>"."Risposte:";
+
+if($sms->getAccettazioneRisposta()){
+    echo "il messaggio accetta risposte";
+}
+else{
+    echo "il messaggio non accetta risposte";
+}
+
+echo "<br/>";
+echo "Stato invio: ".$sms->invio()."<br/>";
+
 
 
 

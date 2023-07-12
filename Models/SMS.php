@@ -4,18 +4,18 @@
         private $accettazione_risposta;
         public static $colore_led = "Green";
 
-        public function __construct($_mittente, $_destinatario, $_oggetto, $_contenuto, Bool $notifica_lettura, Bool $_accettazione_risposta,){
+        public function __construct($_mittente, $_destinatario, $_oggetto, $_contenuto, Bool $_notifica_lettura, Bool $_accettazione_risposta,){
             parent::__construct($_mittente, $_destinatario, $_oggetto, $_contenuto);
             $this->notifica_lettura = $_notifica_lettura;
             $this->accettazione_risposta = $_accettazione_risposta;
         }
 
         public function getNotificaLettura(){
-            return $this->$_notifica_lettura;
+            return $this->notifica_lettura;
         }
 
         public function getAccettazioneRisposta(){
-            return $this->$_accettazione_risposta;
+            return $this->accettazione_risposta;
         }
 
         //polimorfismo
