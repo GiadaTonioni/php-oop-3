@@ -2,6 +2,8 @@
 require_once __DIR__.'/Models/SistemiComunicazione.php';
 require_once __DIR__.'/Models/Email.php';
 require_once __DIR__.'/Models/Allegato.php';
+require_once __DIR__.'/Models/SMS.php';
+
 
 
 //Sistemi Comunicazione
@@ -37,6 +39,9 @@ else{
 //echo "inoltro: ".$comm->inoltro()."<br/>";
 //echo "Allegato: ".$email->allegato->getNome().".".$email->allegato->getTipo().", Dimensioni: ".$email->allegato->getDimensioni()."Mb<br/>";
 
+//SMS
+$sms = new SMS('Poste', 'Luca', 'pin', 'questo è il tuo pin:****', true, false,);
+var_dump($sms);
 
 
 
