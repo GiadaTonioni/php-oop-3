@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__.'/Models/SistemiComunicazione.php';
 require_once __DIR__.'/Models/Email.php';
+require_once __DIR__.'/Models/Allegato.php';
+
 
 //Sistemi Comunicazione
 $comm = new SistemiComunicazione('Giada', 'Sofia', 'Concerto', 'Biglietti presi');
@@ -14,6 +16,9 @@ echo "Stato invio: ".$comm->Invio()."<br/>";
 
 //EMAIL
 $email = new Email('Ticketone', 'Giada', 'biglietti', 'scarica i tuoi biglietti', false);
+$allegato = new Allegato('immagine', 'png', 2);
+//$email->getAllegato($allegato);
+
 var_dump($email);
 
 echo "Mittente: ".$email->getMittente()."<br/>";
@@ -30,6 +35,8 @@ else{
 }
 //echo "stampa: ".$comm->stampa()."<br/>";
 //echo "inoltro: ".$comm->inoltro()."<br/>";
+//echo "Allegato: ".$email->allegato->getNome().".".$email->allegato->getTipo().", Dimensioni: ".$email->allegato->getDimensioni()."Mb<br/>";
+
 
 
 
